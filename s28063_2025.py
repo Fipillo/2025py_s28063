@@ -9,11 +9,26 @@
 
 import random
 
-# Pobranie danych od użytkownika
-length = int(input("Podaj długość sekwencji: "))
-seq_id = input("Podaj ID sekwencji: ")
-description = input("Podaj opis sekwencji: ")
-name = input("Podaj imię: ")
+# Pobranie danych od użytkownika i sprawdzanie poprawności podanych danych
+while True:
+    length = int(input("Podaj długość sekwencji: "))
+    if length <= 0:
+        break
+
+while True:
+    seq_id = input("Podaj ID sekwencji: ")
+    if not seq_id == "":
+        break
+
+while True:
+    description = input("Podaj opis sekwencji: ")
+    if not description == "":
+        break
+
+while True:
+    name = input("Podaj imię: ")
+    if not name == "":
+        break
 
 # Generowanie losowej sekwencji DNA
 nucleotides = ['A', 'C', 'G', 'T']
@@ -32,10 +47,10 @@ with open(filename, 'w') as file:
 print(f"Sekwencja została zapisana do pliku {filename}")
 
 # Obliczanie statystyk (na podstawie sekwencji bez imienia)
-count_A = sequence.count('A') - name.count('A')
-count_C = sequence.count('C') - name.count('C')
-count_G = sequence.count('G') - name.count('G')
-count_T = sequence.count('T') - name.count('T')
+count_A = sequence.count('A')
+count_C = sequence.count('C')
+count_G = sequence.count('G')
+count_T = sequence.count('T')
 
 percent_A = (count_A / length) * 100
 percent_C = (count_C / length) * 100
