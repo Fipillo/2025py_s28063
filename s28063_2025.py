@@ -32,10 +32,10 @@ with open(filename, 'w') as file:
 print(f"Sekwencja została zapisana do pliku {filename}")
 
 # Obliczanie statystyk (na podstawie sekwencji bez imienia)
-count_A = sequence.count('A')
-count_C = sequence.count('C')
-count_G = sequence.count('G')
-count_T = sequence.count('T')
+count_A = sequence.count('A') - name.count('A')
+count_C = sequence.count('C') - name.count('C')
+count_G = sequence.count('G') - name.count('G')
+count_T = sequence.count('T') - name.count('T')
 
 percent_A = (count_A / length) * 100
 percent_C = (count_C / length) * 100
